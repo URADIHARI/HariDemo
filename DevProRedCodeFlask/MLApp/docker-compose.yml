@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  app_mysql:
+    build : ./AppMySQL
+    container_name: App_MySQL
+    volumes:
+      - ./AppMySQL/:/AppMySQL
+    ports:
+      - "3306:3306"
+    #command: mysql -u root -pinsofe cust_db < cust_data.dump
+
+  app_python:
+    build: ./AppPython
+    container_name: App_Python
+    volumes: 
+      - ./AppPython/:/AppPython
+    ports:
+      - "1234:1234"
+    command: gunicorn --bind 0.0.0.0:1234 wsgi:app
+    depends_on:
+      - app_mysql
