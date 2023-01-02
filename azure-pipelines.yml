@@ -1,4 +1,8 @@
 # Docker
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(aacff899-96cc-4c57-a995-787e1a47c8da)'
+    appName: 'mlapp'
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
