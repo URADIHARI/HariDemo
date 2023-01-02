@@ -1,4 +1,13 @@
 # Docker
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(aacff899-96cc-4c57-a995-787e1a47c8da)'
+    appType: 'webApp'
+    WebAppName: 'myapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'webDeploy'
 - task: AzureWebAppContainer@1
   inputs:
     azureSubscription: 'Pay-As-You-Go(aacff899-96cc-4c57-a995-787e1a47c8da)'
