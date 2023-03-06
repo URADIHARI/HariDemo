@@ -1,4 +1,8 @@
 # Docker
+- task: Docker@2
+  inputs:
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
